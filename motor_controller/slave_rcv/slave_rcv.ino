@@ -9,7 +9,7 @@
 
 // This example code is in the public domain.
 
-#inlcude <Wire.h>
+#include <Wire.h>
 
 int slaveAddr = 8;
 char buff[20];
