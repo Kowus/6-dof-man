@@ -11,7 +11,7 @@
 
 #include <Wire.h>
 
-int slaveAddr = 8;
+int SlaveAddr = 8;
 char buff[20];
 int setpoint = 0;
 int highTol = 2;
@@ -48,16 +48,16 @@ void loop() {
 
 // function that executes whenever data is requested by master
 // this function is registered as an event, see setup()
-void receivetEvent()
+void receiveEvent()
 {
   int count;
-  while (Wire.available())
+  while (1 < Wire.available())
   {
     char c = Wire.read();
     buff[count++] = c;
   }
   setpoint = atoi(buff);
-  driveMotor(setpoint);
+  driveMotor();
   count = 0;
 }
 
@@ -93,3 +93,4 @@ void driveMotor()
 
 
 }
+
